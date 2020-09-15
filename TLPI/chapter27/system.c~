@@ -1,0 +1,19 @@
+#include <unistd.h>
+#include <signal.h>
+#include <sys/types.h>
+#include <errno.h>
+
+
+
+int system(const char *command)
+{
+    sigset_t blokMask, origMask;
+    struct sigaction saIgnore, saOrigQuit, saOrigInt, saDefault;
+    pit_t childPid;
+    int status, savedErrno;
+
+    if(command == NULL)
+        return system(":") == 0;
+    
+    
+}
